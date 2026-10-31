@@ -1,0 +1,162 @@
+/* 縦長・正方形では既存の配置を維持する。 */
+.builder-controls,
+.builder-cards,
+.builder-footer,
+.tab-controls,
+.tab-results {
+  display: contents;
+}
+
+.qa-results {
+  display: block;
+  margin-top: 0.8em;
+}
+
+@media (orientation: landscape) {
+  .container.workspace-active {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    min-height: 0;
+    padding-bottom: 0;
+  }
+  .workspace-active > .tab-bar {
+    flex-shrink: 0;
+  }
+  .workspace-active .tab-content-wrap {
+    flex: 1;
+    height: auto;
+    min-height: 0;
+  }
+  .workspace-active .tab-content {
+    height: 100%;
+    min-height: 0;
+  }
+  .builder-workspace,
+  .tab-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-rows: minmax(0, 1fr);
+    column-gap: 0.5em;
+    overflow: hidden;
+  }
+  .builder-controls,
+  .builder-cards,
+  .tab-controls,
+  .tab-results {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .builder-controls,
+  .tab-controls {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .builder-cards,
+  .tab-results {
+    grid-column: 2;
+    grid-row: 1 / -1;
+  }
+  .builder-footer {
+    display: block;
+  }
+  .builder-workspace .input-row,
+  .tab-workspace .input-row,
+  .builder-deck-header {
+    flex-wrap: wrap;
+  }
+  .builder-workspace input,
+  .builder-workspace select,
+  .tab-workspace input,
+  .tab-workspace select,
+  .builder-workspace .filter-row > div {
+    min-width: 0;
+  }
+  .builder-workspace .filter-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .builder-cards .card-grid {
+    display: block;
+  }
+  .builder-workspace.tab-content .builder-cards .card-grid {
+    margin-bottom: 0;
+  }
+  .builder-cards .card-grid > div {
+    scrollbar-gutter: stable;
+  }
+  .builder-cards .card-grid-controls {
+    width: 98%;
+    justify-content: center;
+    gap: 4px !important;
+  }
+  .builder-cards .card-grid .minusBtn,
+  .builder-cards .card-grid .plusBtn {
+    width: min(2.75rem, calc((100% - 4px) / 2)) !important;
+    height: auto !important;
+    aspect-ratio: 1;
+    font-size: 1.2rem !important;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .builder-deck-header {
+    gap: 0.5em;
+  }
+  .saved-workspace .saved-decks-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    margin-top: 0;
+  }
+  .saved-workspace .saved-deck-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    aspect-ratio: 1;
+    font-size: clamp(0.75rem, 1.8vw, 1rem);
+  }
+  .saved-workspace .deck-title {
+    overflow-wrap: anywhere;
+  }
+  .saved-workspace .deck-actions {
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 0.5em;
+  }
+  .saved-workspace .deck-actions button {
+    flex: 1;
+    min-width: 0;
+    padding: 0.4em 0.25em;
+  }
+  .qa-results {
+    margin-top: 0;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 900px) {
+  .builder-workspace .filter-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+.saved-deck-sort-options {
+  flex: 1 0 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.4em 0.7em;
+  background: #fff;
+}
+.saved-deck-sort-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.4em 0;
+  cursor: pointer;
+}
+.saved-deck-sort-options [role="radiogroup"] + [role="radiogroup"] {
+  border-top: 1px solid #ccc;
+  margin-top: 0.4em;
+  padding-top: 0.4em;
+}

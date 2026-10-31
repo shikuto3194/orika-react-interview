@@ -1,0 +1,11 @@
+.saved-deck-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6em; margin-bottom: 0.8em; }
+.saved-deck-tools > input { flex: 1 1 12em; min-width: 0; }
+.saved-deck-options-panel { flex-basis: 100%; width: 100%; }
+.saved-deck-tools .saved-deck-action { display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; min-height: 2.4em; padding: 0.4em 1em; border: 0; border-radius: 6px; background: #1976d2; color: #fff; font: inherit; font-weight: bold; line-height: 1.6; cursor: pointer; }
+.saved-deck-tools .saved-deck-action:not(:disabled):is(:hover, :focus-visible) { background: #1565c0; color: #fff; }
+.saved-deck-tools .saved-deck-action:disabled { background: #b0b0b0 !important; color: #fff !important; cursor: default; }
+.saved-deck-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8em; width: 100%; box-sizing: border-box; }
+.saved-deck-filter-field { display: flex; flex-direction: column; gap: 0.4em; min-width: 0; font-size: 0.9em; }
+.saved-deck-filter-field input, .saved-deck-filter-field select { width: 100%; min-width: 0; box-sizing: border-box; padding: 0.55em; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
+.saved-deck-results-count { color: #666; font-size: 0.85em; line-height: 1.6; margin: 0.6em 0; }
+@media (orientation: landscape) and (max-width: 900px) { .saved-deck-filters { grid-template-columns: minmax(0, 1fr); } }

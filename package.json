@@ -1,0 +1,50 @@
+{
+  "name": "orika-react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "generate-images-manifest": "node scripts/generate-image-manifest.mjs",
+    "predev": "node scripts/generate-image-manifest.mjs",
+    "prebuild": "node scripts/generate-image-manifest.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "build:interview": "node scripts/validate-interview-env.mjs && npm run build",
+    "postbuild": "node scripts/copy-images.mjs",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "harness:preflight": "node scripts/harness.mjs preflight",
+    "harness:check": "node scripts/harness.mjs check",
+    "test": "node scripts/run-tests.mjs",
+    "check": "npm test && npm run lint && npm run build && npm run check:build",
+    "check:build": "node scripts/check-distribution.mjs",
+    "pretest": "node scripts/generate-image-manifest.mjs",
+    "security:install": "node scripts/security/install-hooks.mjs",
+    "security:scan": "node scripts/security/secrets.mjs history",
+    "security:test": "node scripts/security/test-secrets.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.98.0",
+    "jspdf": "^3.0.4",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-router-dom": "^7.13.1",
+    "react-window": "^1.8.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "vite": "^7.2.7",
+    "sharp": "^0.35.5"
+  },
+  "homepage": ".",
+  "engines": {
+    "node": ">=22.12.0 <23"
+  }
+}

@@ -1,0 +1,10 @@
+.account-link-page { min-height: 100vh; padding: 1em; background: #f5f5f5; color: #222; }
+.account-link-card { max-width: 600px; margin: 0 auto; padding: 1.5em; background: white; border-radius: 12px; box-shadow: 0 2px 12px #bbb; }
+.account-link-card .mp-label { display: block; margin: 16px 0 8px; }
+.account-link-card .mp-input { box-sizing: border-box; display: block; width: 100%; padding: 10px; border: 1px solid #999; border-radius: 6px; color: #222; background: white; }
+.account-link-card button { border: 0; border-radius: 6px; padding: 10px 14px; margin: 8px 8px 8px 0; cursor: pointer; }
+.account-link-card .mp-btn-primary { color: white; background: #1976d2; }
+.account-link-card .mp-btn-secondary { color: #333; background: #e0e0e0; }
+.account-link-card p { line-height: 1.6; overflow-wrap: anywhere; }
+.account-link-card [role="note"] { padding: 12px; border: 1px solid #d19036; border-radius: 6px; background: #fff7e6; }
+.account-link-card button:disabled { opacity: .5; cursor: default; }
