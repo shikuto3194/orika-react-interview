@@ -1,21 +1,32 @@
-node_modules/
-dist/
-**/dist/
-.env
-.env.*
-!.env.example
-**/.env.*
-!**/.env.example
-.netlify/
-.knowledge/
-.codex-temp/
-.playwright-cli/
-artifacts/
-logs/
-output/
+# Logs
+logs
 *.log
-images/
-sounds/
-public/images/
-tmp_acg_html/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+docs
+*.local
+
+# 自動生成: scripts/generate-image-manifest.mjs (predev/prebuild で生成)
 src/imagesManifest.generated.js
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local validation outputs
+.codex-temp/
+.netlify/
