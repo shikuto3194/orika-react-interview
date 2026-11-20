@@ -4,7 +4,7 @@
 
 本作は個人制作の同人作品で、非売品です。
 
-[面接用デモを開く](https://orika-react-interview-001.netlify.app/)（ログインが必要です）
+[デモを開く](https://orika-react-interview-001.netlify.app/)
 
 ## できること
 
