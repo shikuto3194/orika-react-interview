@@ -6,6 +6,14 @@
 
 ## スマートフォンでの操作画面
 
+### 対戦イベント管理
+
+主催者は参加者と登録デッキを確認し、ラウンドの組み合わせ、勝敗、順位を一つの画面で管理できます。画面はサンプルの対戦会です。[イベント管理の実装](src/AdminEventsPage.jsx)
+
+<img src="screenshots/mobile-events.webp" alt="対戦イベントの縦画面。参加者一覧、第1回戦の勝敗、第2回戦を開始する操作を表示" width="360">
+
+### カード検索とデッキ構築
+
 | カード検索 | デッキ構築 |
 | --- | --- |
 | <img src="screenshots/mobile-search.webp" alt="スマートフォンの縦画面でカードを検索" width="280"> | <img src="screenshots/mobile-deck.webp" alt="スマートフォンの縦画面でデッキを構築" width="280"> |
