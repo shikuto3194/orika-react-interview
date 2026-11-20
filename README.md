@@ -1,11 +1,30 @@
-# orika-react
+# オリカマネージャー
 
-このプロジェクトはVite＋Reactで構築されています。
-- カードリストの仮想リスト（バーチャルスクロール）・グリッド切替UIを搭載予定
-- `npm run dev` で開発サーバー起動
+オリジナルカードを使ったデッキを組み、保存・共有・印刷用のファイル出力まで行える個人開発のWebアプリです。
+
+[面接用デモを開く](https://orika-react-interview-001.netlify.app/)（ログインが必要です）
+
+## できること
+
+- 色や種類でカードを絞り込み、一覧・グリッドから選んでデッキを組む。
+- 保存済みデッキを検索・並べ替えし、共有URLやJSON・PNG・PDFで持ち出す。
+
+## 開発で担当したこと
+
+個人開発として、目的と仕様の整理、AIへの実装指示、改善方針の判断、動作確認を担当しました。コード作成にはAIを活用しています。
+
+## 設計の工夫
+
+- **カードを選ぶ画面の応答性を保つ。** 一覧で描画する行を絞る仮想スクロールを使い、検索結果や行データを再利用します。
+- **PDFの処理を出力時まで遅らせる。** PDFライブラリは書き出し操作時に読み込み、初回に取得するファイルへ混ざっていないことを配布物の検査で確認します。[配布物の検査](scripts/check-distribution.mjs)
+- **保存後もデッキを見つけやすくする。** 検索・並べ替えを画面から切り出し、保存済みデータに対する動作を個別にテストできるようにしています。[検索処理](src/utils/savedDeckFilters.js) · [並べ替えのテスト](src/utils/savedDeckSort.test.js)
+
+**主な技術**　JavaScript、React、Vite、react-window、jsPDF
 
 ## 開発サーバー起動方法
-```
+
+```bash
+npm ci
 npm run dev
 ```
 
@@ -13,16 +32,6 @@ npm run dev
 ```
 npm run build
 ```
-
-## 主な依存
-- react
-- react-dom
-- react-window
-- vite
-
-## ESLint設定の拡張
-
-本プロジェクトでは、型ありのlintルールを有効にしたTypeScriptの使用を推奨しています。TypeScriptと[`typescript-eslint`](https://typescript-eslint.io)をプロジェクトに統合する方法については、[TSテンプレート](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts)を参照してください。
 
 ## 性能改善とローカル検証（2026-10-08）
 
@@ -47,3 +56,8 @@ Chromiumの独立プロファイルで1280px／390pxの検索・枚数変更時�
 ## 認証情報の混入防止
 
 初回 clone 後は `npm run security:install` を実行してください。検査と検出時の対応は [SECURITY.md](SECURITY.md) を参照してください。
+
+## 関連作品
+
+- [幻想符 Simulator](https://github.com/shikuto3194/orica-simulator-interview)
+- [ACGマネージャー](https://github.com/shikuto3194/acg-react-interview)
